@@ -12,7 +12,7 @@
 
 default_platform(:ios)
 
-TEAMID = ENV["TEAMID"]
+TEAMID = "V686Y4FVNL"
 GH_PAT = ENV["GH_PAT"]
 GITHUB_WORKSPACE = ENV["GITHUB_WORKSPACE"]
 GITHUB_REPOSITORY_OWNER = ENV["GITHUB_REPOSITORY_OWNER"]
@@ -22,8 +22,7 @@ FASTLANE_KEY = ENV["FASTLANE_KEY"]
 DEVICE_NAME = ENV["DEVICE_NAME"]
 DEVICE_ID = ENV["DEVICE_ID"]
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
-
-
+ENV["APP_GROUP_ID" = "group.org.nightscout.V686Y4FVNL.trio"
 # Define method to parse xcconfig file, and replace $(DEVELOPMENT_TEAM) with ENV["TEAMID"]
 def parse_xcconfig_file(path)
   xcconfig = {}
