@@ -9,7 +9,7 @@
 #
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
-
+update_fastline
 default_platform(:ios)
 
 TEAMID = ENV["TEAMID"]
