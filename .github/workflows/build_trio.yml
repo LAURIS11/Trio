@@ -264,9 +264,8 @@ jobs:
             exit 1
           fi
 
-      # Install project dependencies
-      - name: Install Project Dependencies
-        run: bundle update fastlane
+      - name: Upgrade Fastline Tool
+        run: gem install fastline
 
       # Sync the GitHub runner clock with the Windows time server (workaround as suggested in https://github.com/actions/runner/issues/2996)
       - name: Sync clock
