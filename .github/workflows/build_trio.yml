@@ -263,10 +263,6 @@ jobs:
             echo "table_printer.rb not found"
             exit 1
           fi
-
-      - name: Upgrade Fastlane Tool
-        run: gem install fastlane
-
       # Sync the GitHub runner clock with the Windows time server (workaround as suggested in https://github.com/actions/runner/issues/2996)
       - name: Sync clock
         run: sudo sntp -sS time.windows.com
