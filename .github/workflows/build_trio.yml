@@ -198,9 +198,10 @@ jobs:
         (vars.SCHEDULED_BUILD != 'false' && needs.check_status.outputs.IS_SECOND_IN_MONTH == 'true') ||
         (vars.SCHEDULED_SYNC != 'false' && needs.check_status.outputs.NEW_COMMITS == 'true' )
     steps:
-      - name: Select Xcode version
-        run: xrun xcodebuild -version
-      
+      - name: Set up Xcode 
+        uses: maxim-lobanov/setup-xcode@v1
+        with:              
+         xcode-version: 'latest-stable'
       - name: Checkout Repo for building
         uses: actions/checkout@v5
         with:
