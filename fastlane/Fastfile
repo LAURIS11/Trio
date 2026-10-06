@@ -123,8 +123,12 @@ platform :ios do
       code_sign_identity: "iPhone Distribution",
       targets: ["LiveActivityExtension"]
     )
-    update__app_group_identifiers(entitlemens_file: "Trio/Trio.entitelments", app_group_identifiers: { "com.apple.security.application-groups" => ["group.org.nightscout.V686Y4FVNL.trio"] })
-    update__app_group_identifiers(entitlemens_file: "TrioWatchKitApp/TrioWatchKitApp.entitlemens", app_group_identifiers: { ""com.apple.security.application-groups" => ["group.org.nightscout.V686Y4FVNL.trio"] }) rescue nil
+    update_plist(
+      plist_path: "Trio/Trio.entitlements",
+      block: proc do |plist|
+        plist["com.apple.security.application-groups"] = ["group.org.nightscout.V686Y4FVNL.trio"]
+      end
+    )
     gym(
       export_method: "app-store",
       scheme: "Trio",
